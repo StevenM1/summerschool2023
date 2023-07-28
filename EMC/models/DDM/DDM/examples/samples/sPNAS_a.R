@@ -1,0 +1,13 @@
+rm(list=ls())
+source("emc/emc.R")
+source("models/DDM/DDM/ddmTZD.R")
+load("sPNAS_a.RData")
+
+sPNAS_a <- auto_burn(samplers,cores_per_chain=2)
+save(sPNAS_a,file="sPNAS_a.RData")
+sPNAS_a <- auto_adapt(sPNAS_a,cores_per_chain=2)
+save(sPNAS_a,file="sPNAS_a.RData")
+sPNAS_a <- auto_sample(sPNAS_a,iter=1000,cores_per_chain=2)
+save(sPNAS_a,file="sPNAS_a.RData")
+ppPNAS_a <- post_predict(sPNAS_a,n_cores=19)
+save(ppPNAS_a,sPNAS_a,file="sPNAS_a.RData")

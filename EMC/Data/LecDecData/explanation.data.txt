@@ -1,0 +1,16 @@
+The coloms are:
+
+1) pnum = participant number
+2) blocknum = block number
+3) practice = 1 if practice block, otherwise 0
+4) speedaccuracy = 1 for speed-instruction and 0 for accuracy-instruction (in PropData "2" for 75% words, "1" for 75% nonwords)
+5) stimulus = unique identifier of stimulus, stimuli are nested in frequency conditions
+6) frequencycondition = Code "1" means "high frequency word", code "2" means "low frequency word", and code "3" means "very low frequency word". Codes 4, 5, and 6 mean
+"nonword" (4 is derived from a HF word, 5 is derived from an LF word, and 6
+is derived from a VLF word).
+7) response =  0 is nonword, 1 is word, -1 is not interpretable response (i.e., pushed a button, but not the right one and also not the one next to the right button)
+8) t_in_sec = RT in seconds
+9) censor = 1 if value is eliminated from furhter analysis; practice block, uninterpretable response, too fast response (<180 ms), too slow response (>3 sec)
+
+
+
